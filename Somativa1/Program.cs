@@ -1,24 +1,15 @@
+using Somativa1.GraphQL;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-builder.Services.AddGraphQLServer();
+// GraphQL
+builder.Services
+    .AddGraphQLServer()
+    .AddQueryType<Query>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
-
-app.UseRouting().UserEndpoints(endpoints =>
-{
-    endpoints.MapGraphQL();
-});
-
-app.UseHttpsRedirection();
+// endpoint GraphQL
+app.MapGraphQL();
 
 app.Run();
-
