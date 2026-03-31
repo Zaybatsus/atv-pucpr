@@ -1,0 +1,6 @@
+@Somativa1_HostAddress = http://localhost:5201
+
+GET {{Somativa1_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
