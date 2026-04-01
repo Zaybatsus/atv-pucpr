@@ -3,6 +3,8 @@ Atividade Somativa - PUCPR - DevOps
 
 Link: http://localhost:5201/graphql/
 
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
+
 Para testar Query:
 query{
    login{
